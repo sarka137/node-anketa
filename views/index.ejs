@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webová anketa</title>
-    <link rel="stylesheet" href="../public/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <h1>Webová anketa</h1>
+    <div>
+        <label for="prokrastinace">Jak velký jsi prokrastinátor? (0 = nejméně, 5 = nejvíce)</label>
+        <input type="range" id="prokrastinace" name="prokrastinace" min="0" max="5" step="1">
+    </div>
+
+    <div>
+        <label for="game">Napiš jméno své oblíbené počítačové hry:</label>
+        <input type="text" id="game" name="game">
+    </div>
+
+    <div>
+        <form>
+        <label for="pet">Kočka nebo pes?</label>
+        <input type="radio" id="pet" name="kocka" value="Kočka">
+        <label for="kocka">Kočka</label>
+        <input type="radio" id="pet" name="pes" value="Pes">
+        <label for="pes">Pes</label>
+        </form>
+    </div>
 </body>
 </html>
