@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const app = express();
-const PORT = 3000;
+const PORT = 3300;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -18,5 +18,9 @@ app.get('/', (req, res) => {
 
 app.post('/submit', (req, res) => {
     res.redirect('/results');
+});
+
+app.get('/results', (req, res) => {
+  res.render('results', { title: 'Výsledky ankety'});
 });
 
