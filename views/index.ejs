@@ -8,24 +8,52 @@
 </head>
 <body>
     <h1>Webová anketa</h1>
+    <form action="/submit" method="post" class="form-container">
     <div>
-        <label for="prokrastinace">Jak velký jsi prokrastinátor? (0 = nejméně, 5 = nejvíce)</label>
+        <label for="prokrastinace">Jak velký jsi prokrastinátor? </label><br>
         <input type="range" id="prokrastinace" name="prokrastinace" min="0" max="5" step="1">
+        <span id="hodnota"></span>
     </div>
 
     <div>
-        <label for="game">Napiš jméno své oblíbené počítačové hry:</label>
-        <input type="text" id="game" name="game">
+        <label for="predmet">Vyber svůj nejneoblíbenější předmět:</label><br>
+        <select id="predmet" name="predmet">
+            <option value="angličtina">Angličtina</option>
+            <option value="čeština">Čeština</option>
+            <option value="matematika">Matematika</option>
+            <option value="literatura">Literatura</option>
+            <option value="fyzika">Fyzika</option>
+            <option value="elektrotechnika">Elektrotechnika</option>
+            <option value="občanka">Občanka</option>
+            <option value="tělocvik">Tělocvik</option>
+            <option value="pvy">PVY</option>
+            <option value="programování">Programování</option>
+            <option value="počítačové sítě">Počítačové sítě</option>
+            <option value="ekonomika">Ekonomika</option>
+            <option value="hardware">Hardware</option>
+            <option value="počítačová grafika">Počítačová grafika</option>
+        </select>
     </div>
 
     <div>
-        <form>
-        <label for="pet">Kočka nebo pes?</label>
-        <input type="radio" id="pet" name="kocka" value="Kočka">
+        
+        <label for="pet">Kočka nebo pes?</label><br>
+        <input type="radio" id="kocka" name="pet" value="Kočka">
         <label for="kocka">Kočka</label>
-        <input type="radio" id="pet" name="pes" value="Pes">
-        <label for="pes">Pes</label>
-        </form>
+        <input type="radio" id="pes" name="pet" value="Pes">
+        <label for="pes">Pes</label><br>
     </div>
+
+    <button type="submit">Odeslat odpověď</button>
+</form>
 </body>
+<script>
+    const slider = document.getElementById('prokrastinace');
+    const output = document.getElementById('hodnota');
+    output.innerHTML = slider.value; // Zobrazit výchozí hodnotu
+    
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    }
+    </script>
 </html>
